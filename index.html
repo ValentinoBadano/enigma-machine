@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquina Enigma</title>
+    <link rel="icon" type="image/x-icon" href="logo.svg">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- <h1 class="text-center">Máquina Enigma</h1> -->
+        <img class = "centered-image" src="logo.svg" alt="Enigma Logo" style="width: 150px; height: auto;">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div id="rotor3-char" class="mt-2">A</div>
+            </div>
+            <div class="col-md-4">
+                <div id="rotor2-char" class="mt-2">A</div>
+            </div>
+            <div class="col-md-4">
+                <div id="rotor1-char" class="mt-2">A</div>
+            </div>
+        </div>
+        
+        <div class="keyboard">
+            <div class="row justify-content-center">
+                <div class="lamp" id="lamp-Q">Q</div>
+                <div class="lamp" id="lamp-W">W</div>
+                <div class="lamp" id="lamp-E">E</div>
+                <div class="lamp" id="lamp-R">R</div>
+                <div class="lamp" id="lamp-T">T</div>
+                <div class="lamp" id="lamp-Y">Y</div>
+                <div class="lamp" id="lamp-U">U</div>
+                <div class="lamp" id="lamp-I">I</div>
+                <div class="lamp" id="lamp-O">O</div>
+                <div class="lamp" id="lamp-P">P</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="lamp" id="lamp-A">A</div>
+                <div class="lamp" id="lamp-S">S</div>
+                <div class="lamp" id="lamp-D">D</div>
+                <div class="lamp" id="lamp-F">F</div>
+                <div class="lamp" id="lamp-G">G</div>
+                <div class="lamp" id="lamp-H">H</div>
+                <div class="lamp" id="lamp-J">J</div>
+                <div class="lamp" id="lamp-K">K</div>
+                <div class="lamp" id="lamp-L">L</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="lamp" id="lamp-Z">Z</div>
+                <div class="lamp" id="lamp-X">X</div>
+                <div class="lamp" id="lamp-C">C</div>
+                <div class="lamp" id="lamp-V">V</div>
+                <div class="lamp" id="lamp-B">B</div>
+                <div class="lamp" id="lamp-N">N</div>
+                <div class="lamp" id="lamp-M">M</div>
+            </div>
+        </div>
+
+        <div class="keyboard">
+            <div class="row justify-content-center">
+                <div class="key" onclick="pressKey('Q')">Q</div>
+                <div class="key" onclick="pressKey('W')">W</div>
+                <div class="key" onclick="pressKey('E')">E</div>
+                <div class="key" onclick="pressKey('R')">R</div>
+                <div class="key" onclick="pressKey('T')">T</div>
+                <div class="key" onclick="pressKey('Y')">Y</div>
+                <div class="key" onclick="pressKey('U')">U</div>
+                <div class="key" onclick="pressKey('I')">I</div>
+                <div class="key" onclick="pressKey('O')">O</div>
+                <div class="key" onclick="pressKey('P')">P</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="key" onclick="pressKey('A')">A</div>
+                <div class="key" onclick="pressKey('S')">S</div>
+                <div class="key" onclick="pressKey('D')">D</div>
+                <div class="key" onclick="pressKey('F')">F</div>
+                <div class="key" onclick="pressKey('G')">G</div>
+                <div class="key" onclick="pressKey('H')">H</div>
+                <div class="key" onclick="pressKey('J')">J</div>
+                <div class="key" onclick="pressKey('K')">K</div>
+                <div class="key" onclick="pressKey('L')">L</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="key" onclick="pressKey('Z')">Z</div>
+                <div class="key" onclick="pressKey('X')">X</div>
+                <div class="key" onclick="pressKey('C')">C</div>
+                <div class="key" onclick="pressKey('V')">V</div>
+                <div class="key" onclick="pressKey('B')">B</div>
+                <div class="key" onclick="pressKey('N')">N</div>
+                <div class="key" onclick="pressKey('M')">M</div>
+            </div>
+        </div>
+
+        <h3>Texto ingresado</h2>
+        <textarea id="input-text" class="form-control" rows="2" readonly></textarea>
+        <h3>Texto encriptado</h2>
+        <textarea id="output-text" class="form-control" rows="2" readonly></textarea>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="enigma.js"></script>
+</body>
+</html>

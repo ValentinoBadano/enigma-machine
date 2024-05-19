@@ -1,0 +1,56 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+.keyboard {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.keyboard .row {
+    margin-bottom: 10px;
+}
+.key, .lamp {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #555;
+    margin-right: 5px;
+}
+.lamp {
+    background-color: #444;
+}
+.lamp.on {
+    background-color: yellow;
+}
+#output-text {
+    width: 100%;
+    height: 90px;
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    overflow-y: auto;
+}
+
+#input-text {
+    width: 100%;
+    height: 90px;
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    overflow-y: auto;
+}
+
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 50%; /* Puedes ajustar el tamaño según sea necesario */
+}
