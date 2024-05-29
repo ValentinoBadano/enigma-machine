@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - Enigma Machine Simulator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            font-family: 'VT323', monospace;
+        }
+        .content {
+            max-width: 800px;
+            text-align: left;
+        }
+        .content h2 {
+            color: #ffc107;
+        }
+        a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container content">
+        <h1>Acerca de</h1>
+        <h2>Descifrado de códigos durante la Segunda Guerra Mundial</h2>
+        <p>Las máquinas Enigma son una serie de máquinas cifradoras de rotor electromecánicas. Las primeras máquinas fueron inventadas al final de la Primera Guerra Mundial por el ingeniero alemán Arthur Scherbius y se utilizaron principalmente para proteger la comunicación comercial, diplomática y militar. Las máquinas Enigma se volvieron cada vez más complejas y fueron ampliamente utilizadas por el ejército alemán durante la Segunda Guerra Mundial para cifrar señales de radio.</p>
+        <p>Podrás utilizar esta máquina para cifrar o descifrar mensajes Enigma (el cifrado Enigma es simétrico, lo que significa que se pueden utilizar los mismos ajustes para cifrar o descifrar un mensaje).</p>
+        <h2>En el interior de la Enigma</h2>
+        <p>La máquina enigma es una máquina de cifrado bastante compleja que consta de cuatro secciones principales:</p>
+        <h3>El teclado</h3>
+        <p>El teclado se utiliza para recuperar la entrada del usuario. La máquina Enigma es una máquina de cifrado simétrica. Lo que significa que se puede utilizar para cifrar o descifrar un mensaje utilizando los mismos ajustes. Por lo tanto, el teclado se utiliza para ingresar el texto plano que debe cifrarse o el texto cifrado que debe descifrarse.</p>
+        <p>El teclado consta de 26 teclas para cada letra del alfabeto. Esto significa que los mensajes cifrados se unirán sin espacios ni signos de puntuación.</p>
+        <h3>El Plugboard</h3>
+        <p>Una vez que se presiona una tecla en el teclado, pasa por el plugboard que proporciona la primera etapa del proceso de cifrado. Se basa en los principios de un cifrado de sustitución, una forma de cifrado de transposición.</p>
+        <p>Para configurar los plugboards, se utilizan cables cortos para conectar pares de letras que se permutarán. Por ejemplo, en la imagen a continuación, la letra W se reemplazará por una D y la letra D por una W, ya que se utiliza un cable (rojo) para conectar estas dos letras/conectores. De manera similar, la letra V se convertirá en la letra Z y la Z se convertirá en la V.</p>
+        <p>En un libro de códigos, la configuración del plugboard se registraría de la siguiente manera: DW VZ</p>
+        <h3>Los rotores</h3>
+        <p>Después del plugboard, la letra pasa por los tres rotores en orden (de derecha a izquierda), ¡cada uno de ellos la cambia de manera diferente usando una combinación de cifrado de transposición y cifrado César! En la Enigma M3 hay tres ranuras de rotor y cinco rotores para elegir. Cada rotor se identifica con un número romano del I al V. Esto proporciona algunos ajustes de la máquina Enigma: qué rotores usar y en qué orden colocarlos. En un libro de códigos, esta configuración se registraría como IV II III (rotores izquierdo, medio y derecho).</p>
+        <p>Cada uno de los cinco rotores cifra la letra de manera diferente utilizando un cifrado de transposición/permutación y se puede conectar en la máquina Enigma con una configuración de Anillo diferente. Otra configuración es la posición inicial de los rotores: ¿A qué letras vas a configurar cada rotor para comenzar (por ejemplo, A/B/C../Z a veces se registra en un libro de códigos usando números (01 para A, 02 para B hasta 26 para Z). Esto crea un cambio de César (Cifrado César). En una máquina Enigma, puedes cambiar la posición de los rotores girando las tres ruedas.</p>
+        <p>Se utilizaron diferentes versiones de Enigma (por ejemplo, M4) que incluían cuatro rotores, lo que hacía que el proceso de cifrado y el número de ajustes posibles fueran aún mayores.</p>
+        <p>En nuestro emulador Enigma M3, puedes hacer clic en los rotores para acceder a los ajustes de los rotores de Enigma:</p>
+        <p>Lo que hace que el código Enigma sea particularmente difícil de descifrar es que cada vez que se presiona una tecla, el rotor de la derecha gira una letra. Esto significa que la configuración de cifrado cambia constantemente para cada letra de un mensaje. También significa que una sola letra de texto plano se cifrará de manera diferente dependiendo de su posición en el mensaje.</p>
+        <p>Los rotores también están conectados entre sí para que cuando el rotor posicionado a la derecha alcance una letra específica, active el rotor en el medio para que gire una letra. De manera similar, cuando el rotor en el medio alcance una letra específica, activa el rotor de la izquierda para que gire una letra.</p>
+        <h3>El Reflector</h3>
+        <p>El reflector es otro tipo de rotor dentro de la máquina. Una vez que la letra ha pasado por los tres rotores de derecha a izquierda, el reflector reflejará la corriente eléctrica de regreso a través de los rotores, enviando la letra cifrada a través de los rotores de izquierda a derecha para otras 3 etapas de cifrado y luego a través del plugboard nuevamente para un cifrado de sustitución final. Al pasar por el reflector, también se aplica un cifrado de permutación a la letra.</p>
+        <p>Se utilizaron diferentes versiones de reflectores en diferentes versiones de máquinas Enigma. Cada reflector aplicaría un cifrado de permutación diferente. Las máquinas Enigma M3 estaban equipadas con un reflector UKW-B o UKW-C. Puedes aplicar estos dos reflectores en la ventana de configuración de rotores de nuestro emulador (ver captura de pantalla anterior).</p>
+        <h3>El Lampboard</h3>
+        <p>El lampboard es la etapa final del proceso de cifrado y se utiliza para mostrar la salida (letra cifrada). Consiste en 26 bombillas, una para cada letra del alfabeto.</p>
+
+        
+    </div>
+</body>
+</html>

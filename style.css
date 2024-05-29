@@ -1,9 +1,38 @@
 body {
     background-color: #333;
     color: #fff;
+    height: 100vh;
+    /*typewriter font*/
+    font-family: 'VT323', monospace;
 }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+.lamps {
+    margin-top: 30px;
+}
+.lamps .row {
+    margin-bottom: 10px;
+}
+
+
 .keyboard {
-    margin-top: 40px;
+    user-select: none;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .keyboard .row {
@@ -12,7 +41,6 @@ body {
 .key, .lamp {
     width: 40px;
     height: 40px;
-    border: 1px solid #fff;
     display: inline-block;
     line-height: 40px;
     text-align: center;
@@ -22,13 +50,79 @@ body {
     margin-right: 5px;
 }
 .lamp {
+    border-radius: 50%;
     background-color: #444;
 }
+
+.key.pressed {
+    background-color: #424242; /* Color oscuro al presionar */
+}
+
+.rotor {
+    float: left;
+    margin: 0px 20px;
+    width: 23px;
+    height: 125px;
+    background: rgb(66, 66, 66);
+    color: white;
+}
+
+#rotors {
+    padding: 20px;
+    margin: 0px auto;
+    width: 230px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.letter {
+    text-align: center;
+    font-size: 12pt;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-shadow: 0px 1px #AAAAAA;
+    box-sizing: border-box;
+}
+
+.nextLetter {
+    background-color: rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
+}
+
+.previousLetter {
+    background-color: rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+}
+
+.previousLetter:hover {
+    background-color: rgba(0,0,0,0.8);
+    background: linear-gradient(to bottom, rgba(66, 66, 66, 0.8) 0%,rgba(46, 46, 46, 0.8) 100%);
+}
+
+.nextLetter:hover {
+    background-color: rgba(0,0,0,0.8);
+    background: linear-gradient(to bottom, rgba(46, 46, 46, 0.8) 0%,rgba(66, 66, 66, 0.8) 100%);
+
+}
+
+.rotor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .lamp.on {
-    background-color: yellow;
+    /* border-bottom: 3px solid yellow;
+    color: yellow; */
+    box-shadow: 0 0 10px 5px rgb(255, 251, 33); /* Sombra de luz */
+    background-color: rgb(255, 251, 33);
+    font-weight: bold;
+    color: #000;
+    
 }
 #output-text {
-    width: 100%;
+    width: 70%;
     height: 90px;
     background-color: #555;
     color: #fff;
@@ -38,7 +132,7 @@ body {
 }
 
 #input-text {
-    width: 100%;
+    width: 70%;
     height: 90px;
     background-color: #555;
     color: #fff;
@@ -51,6 +145,46 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
     width: 50%; /* Puedes ajustar el tamaño según sea necesario */
+}
+
+.rotor-selectors {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.rotor-wrapper {
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#plugboard {
+    clear: both;
+    margin: auto;
+    padding: 30px 30px;
+    width: 680px;
+    height: 180px;
+  }
+
+.plug {
+    cursor: pointer;
+    color: rgba(0,0,0,0);
+    float: left;
+    border: 3px #AAAAAA solid;
+    width: 26px;
+    height: 26px;
+    margin: 18px 20px;
+    border-radius: 50%;
+    background: #242424;
+    text-shadow: 0px -30px #AAAAAA, -2px -30px #000000;
+}
+
+.plug.selected {
+    background: #FFD700;
+    color: #FFD700;
+    text-shadow: 0px -30px #FFD700, -2px -30px #000000;
 }

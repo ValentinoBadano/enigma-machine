@@ -9,22 +9,32 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- <h1 class="text-center">Máquina Enigma</h1> -->
-        <img class = "centered-image" src="logo.svg" alt="Enigma Logo" style="width: 150px; height: auto;">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div id="rotor3-char" class="mt-2">A</div>
+    <div class="top-section container">
+        <h1>Máquina Enigma</h1>
+    </div>
+    
+    <div class="container main-content">
+        <div class="row text-center" id="rotors">
+            
+            <div class="rotor" id="rotor1">
+                <div class="letter nextLetter" id="rotor3-prev" onclick="changeRotorPosition(3,1);">B</div>
+                <div class="letter currentLetter" id="rotor3-char">A</div>
+                <div class="letter previousLetter" id="rotor3-next" onclick="changeRotorPosition(3,-1);">Z</div>
             </div>
-            <div class="col-md-4">
-                <div id="rotor2-char" class="mt-2">A</div>
+            <div class="rotor" id="rotor2">
+                <div class="letter nextLetter" id="rotor2-prev" onclick="changeRotorPosition(2,1);">B</div>
+                <div class="letter currentLetter" id="rotor2-char">A</div>
+                <div class="letter previousLetter" id="rotor2-next" onclick="changeRotorPosition(2,-1);">Z</div>
             </div>
-            <div class="col-md-4">
-                <div id="rotor1-char" class="mt-2">A</div>
-            </div>
+            <div class="rotor" id="rotor3">
+                <div class="letter nextLetter" id="rotor1-prev" onclick="changeRotorPosition(1,1);">B</div>
+                <div class="letter currentLetter" id="rotor1-char">A</div>
+                <div class="letter previousLetter" id="rotor1-next" onclick="changeRotorPosition(1,-1);">Z</div>
+            </div> 
+  
         </div>
         
-        <div class="keyboard">
+        <div class="lamps">
             <div class="row justify-content-center">
                 <div class="lamp" id="lamp-Q">Q</div>
                 <div class="lamp" id="lamp-W">W</div>
@@ -61,36 +71,40 @@
 
         <div class="keyboard">
             <div class="row justify-content-center">
-                <div class="key" onclick="pressKey('Q')">Q</div>
-                <div class="key" onclick="pressKey('W')">W</div>
-                <div class="key" onclick="pressKey('E')">E</div>
-                <div class="key" onclick="pressKey('R')">R</div>
-                <div class="key" onclick="pressKey('T')">T</div>
-                <div class="key" onclick="pressKey('Y')">Y</div>
-                <div class="key" onclick="pressKey('U')">U</div>
-                <div class="key" onclick="pressKey('I')">I</div>
-                <div class="key" onclick="pressKey('O')">O</div>
-                <div class="key" onclick="pressKey('P')">P</div>
+                <div class="key" id="key-Q" onclick="pressKey('Q')">Q</div>
+                <div class="key" id="key-W" onclick="pressKey('W')">W</div>
+                <div class="key" id="key-E" onclick="pressKey('E')">E</div>
+                <div class="key" id="key-R" onclick="pressKey('R')">R</div>
+                <div class="key" id="key-T" onclick="pressKey('T')">T</div>
+                <div class="key" id="key-Y" onclick="pressKey('Y')">Y</div>
+                <div class="key" id="key-U" onclick="pressKey('U')">U</div>
+                <div class="key" id="key-I" onclick="pressKey('I')">I</div>
+                <div class="key" id="key-O" onclick="pressKey('O')">O</div>
+                <div class="key" id="key-P" onclick="pressKey('P')">P</div>
+    
             </div>
             <div class="row justify-content-center">
-                <div class="key" onclick="pressKey('A')">A</div>
-                <div class="key" onclick="pressKey('S')">S</div>
-                <div class="key" onclick="pressKey('D')">D</div>
-                <div class="key" onclick="pressKey('F')">F</div>
-                <div class="key" onclick="pressKey('G')">G</div>
-                <div class="key" onclick="pressKey('H')">H</div>
-                <div class="key" onclick="pressKey('J')">J</div>
-                <div class="key" onclick="pressKey('K')">K</div>
-                <div class="key" onclick="pressKey('L')">L</div>
+                <div class="key" id="key-A" onclick="pressKey('A')">A</div>
+                <div class="key" id="key-S" onclick="pressKey('S')">S</div>
+                <div class="key" id="key-D" onclick="pressKey('D')">D</div>
+                <div class="key" id="key-F" onclick="pressKey('F')">F</div>
+                <div class="key" id="key-G" onclick="pressKey('G')">G</div>
+                <div class="key" id="key-H" onclick="pressKey('H')">H</div>
+                <div class="key" id="key-J" onclick="pressKey('J')">J</div>
+                <div class="key" id="key-K" onclick="pressKey('K')">K</div>
+                <div class="key" id="key-L" onclick="pressKey('L')">L</div>
+
             </div>
             <div class="row justify-content-center">
-                <div class="key" onclick="pressKey('Z')">Z</div>
-                <div class="key" onclick="pressKey('X')">X</div>
-                <div class="key" onclick="pressKey('C')">C</div>
-                <div class="key" onclick="pressKey('V')">V</div>
-                <div class="key" onclick="pressKey('B')">B</div>
-                <div class="key" onclick="pressKey('N')">N</div>
-                <div class="key" onclick="pressKey('M')">M</div>
+                <div class="key" id="key-Z" onclick="pressKey('Z')">Z</div>
+                <div class="key" id="key-X" onclick="pressKey('X')">X</div>
+                <div class="key" id="key-C" onclick="pressKey('C')">C</div>
+                <div class="key" id="key-V" onclick="pressKey('V')">V</div>
+                <div class="key" id="key-B" onclick="pressKey('B')">B</div>
+                <div class="key" id="key-N" onclick="pressKey('N')">N</div>
+                <div class="key" id="key-M" onclick="pressKey('M')">M</div>
+                
+
             </div>
         </div>
 
@@ -100,6 +114,80 @@
         <textarea id="output-text" class="form-control" rows="2" readonly></textarea>
 
     </div>
+
+    <div class="rotor-selectors row">
+        <div class="rotor-wrapper">
+            <label for="reflector-sel">Reflector</label>
+            <select id="reflector-sel" class="form-control" onchange="changeReflector()">
+                <option value="B" selected="selected">B</option>
+                <option value="C">C</option>
+            </select>
+        </div>
+        <div class="rotor-wrapper">
+            <label for="rotor1-sel">Rotor 1</label>
+            <select id="rotor1-sel" class="form-control" onchange="changeRotor(1)">
+                <option value="I" selected="selected">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+            </select>
+        </div>
+        <div class="rotor-wrapper">
+            <label for="rotor2-sel">Rotor 2</label>
+            <select id="rotor2-sel" class="form-control" onchange="changeRotor(2)">
+                <option value="I">I</option>
+                <option value="II" selected="selected">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+            </select>
+        </div>
+        <div class="rotor-wrapper">
+            <label for="rotor3-sel">Rotor 3</label>
+            <select id="rotor3-sel" class="form-control" onchange="changeRotor(3)">
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III" selected="selected">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="plugboard">
+        <div class="plug" onclick="plug(this);">Q</div>
+        <div class="plug" onclick="plug(this);">W</div>
+        <div class="plug" onclick="plug(this);">E</div>
+        <div class="plug" onclick="plug(this);">R</div>
+        <div class="plug" onclick="plug(this);">T</div>
+        <div class="plug" onclick="plug(this);">Z</div>
+        <div class="plug" onclick="plug(this);">U</div>
+        <div class="plug" onclick="plug(this);">I</div>
+        <div class="plug" onclick="plug(this);">O</div>
+        <div class="plug" style="clear: left; margin-left:48px;" onclick="plug(this);">A</div>
+        <div class="plug" onclick="plug(this);">S</div>
+        <div class="plug" onclick="plug(this);">D</div>
+        <div class="plug" onclick="plug(this);">F</div>
+        <div class="plug" onclick="plug(this);">G</div>
+        <div class="plug" onclick="plug(this);">H</div>
+        <div class="plug" onclick="plug(this);">J</div>
+        <div class="plug" onclick="plug(this);">K</div>
+        <div class="plug" style="clear: left;" onclick="plug(this);">P</div>
+        <div class="plug" onclick="plug(this);">Y</div>
+        <div class="plug" onclick="plug(this);">X</div>
+        <div class="plug" onclick="plug(this);">C</div>
+        <div class="plug" onclick="plug(this);">V</div>
+        <div class="plug" onclick="plug(this);">B</div>
+        <div class="plug" onclick="plug(this);">N</div>
+        <div class="plug" onclick="plug(this);">M</div>
+        <div class="plug" onclick="plug(this);">L</div>
+      </div>
+      <div class="container text-center">
+        <br><br><a href="about.html">Acerca de</a>
+      </div>
+
+      
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
