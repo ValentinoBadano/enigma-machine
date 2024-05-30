@@ -30,6 +30,15 @@
         a:hover {
             text-decoration: underline;
         }
+        pre {
+            color: white;
+            text-align: center;
+        }
+        .centered-image {
+            text-align: center;
+            margin: 20px auto;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -51,9 +60,45 @@
         <p>Después del plugboard, la letra pasa por los tres rotores en orden (de derecha a izquierda), ¡cada uno de ellos la cambia de manera diferente usando una combinación de cifrado de transposición y cifrado César! En la Enigma M3 hay tres ranuras de rotor y cinco rotores para elegir. Cada rotor se identifica con un número romano del I al V. Esto proporciona algunos ajustes de la máquina Enigma: qué rotores usar y en qué orden colocarlos. En un libro de códigos, esta configuración se registraría como IV II III (rotores izquierdo, medio y derecho).</p>
         <p>Cada uno de los cinco rotores cifra la letra de manera diferente utilizando un cifrado de transposición/permutación y se puede conectar en la máquina Enigma con una configuración de Anillo diferente. Otra configuración es la posición inicial de los rotores: ¿A qué letras vas a configurar cada rotor para comenzar (por ejemplo, A/B/C../Z a veces se registra en un libro de códigos usando números (01 para A, 02 para B hasta 26 para Z). Esto crea un cambio de César (Cifrado César). En una máquina Enigma, puedes cambiar la posición de los rotores girando las tres ruedas.</p>
         <p>Se utilizaron diferentes versiones de Enigma (por ejemplo, M4) que incluían cuatro rotores, lo que hacía que el proceso de cifrado y el número de ajustes posibles fueran aún mayores.</p>
-        <p>En nuestro emulador Enigma M3, puedes hacer clic en los rotores para acceder a los ajustes de los rotores de Enigma:</p>
         <p>Lo que hace que el código Enigma sea particularmente difícil de descifrar es que cada vez que se presiona una tecla, el rotor de la derecha gira una letra. Esto significa que la configuración de cifrado cambia constantemente para cada letra de un mensaje. También significa que una sola letra de texto plano se cifrará de manera diferente dependiendo de su posición en el mensaje.</p>
         <p>Los rotores también están conectados entre sí para que cuando el rotor posicionado a la derecha alcance una letra específica, active el rotor en el medio para que gire una letra. De manera similar, cuando el rotor en el medio alcance una letra específica, activa el rotor de la izquierda para que gire una letra.</p>
+        <p>Estos rotores podían intercambiarse de posición, e inicialmente había un juego de cinco, para mayor dificultad. Los rotores de la Enigma M3 se pueden configurar de la siguiente manera:</p>
+        
+        <table width="410" align="center" border="1" bordercolor="#333333" cellpadding="2" cellspacing="0">
+            <tbody><tr>
+              <td width="95"><strong>Rotor</strong></td>
+              <td width="497">ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
+            </tr>
+            <tr>
+              <td><strong>I</strong></td>
+              <td>EKMFLGDQVZNTOWYHXUSPAIBRCJ</td>
+            </tr>
+            <tr>
+              <td><strong>II</strong></td>
+              <td>AJDKSIRUXBLHWTMCQGZNPYFVOE</td>
+            </tr>
+            <tr>
+              <td><strong>III</strong></td>
+              <td>BDFHJLCPRTXVZNYEIWGAKMUSQO</td>
+            </tr>
+            <tr>
+              <td><strong>IV</strong></td>
+              <td>ESOVPZJAYQUIRHXLNFTGKDCMWB</td>
+            </tr>
+            <tr>
+              <td><strong>V</strong></td>
+              <td>VZBRGITYUPSDNHLXAWMJQOFECK</td>
+            </tr>
+          </tbody></table>
+          <div class="centered-image"><img src="img/keylist.jpg" style="width: 500px;"></div>
+          <br>
+          <p>Para el 7 de julio de 1941 la configuración era la siguiente </p>
+          <br>
+        <pre>
+Tag  Walzenlage  Ringstellung  ---- Steckerverbindungen ----
+7    II  IV  V     02 21 12    AV BS CG DL FU HZ IN KM OW RX
+          </pre>
+          <p>El operador de la máquina debía colocar esa configuración antes de enviar o recibir el primer mensaje del día. Cogería los rotores (Walzenlage) 2, 4 y 5 (en ese orden), y movería el anillo de cada rotor a las posiciones 2, 21 y 12 respectivamente, como se indica en Ringstellung (a veces la configuración se puede ver en las letras correspondientes a la posición del anillo; en este caso serían B U L), y los insertaría en la máquina. También debía colocar los cables conectores uniendo en la parte baja de la máquina las posiciones que se indican en Steckerverbindungen, uniendo A con V, B con S, C con G, etc. Esta configuración se mantendrá en todos los mensajes del día, y con ella ya se pueden empezar a descifrar mensajes. </p>
         <h3>El Reflector</h3>
         <p>El reflector es otro tipo de rotor dentro de la máquina. Una vez que la letra ha pasado por los tres rotores de derecha a izquierda, el reflector reflejará la corriente eléctrica de regreso a través de los rotores, enviando la letra cifrada a través de los rotores de izquierda a derecha para otras 3 etapas de cifrado y luego a través del plugboard nuevamente para un cifrado de sustitución final. Al pasar por el reflector, también se aplica un cifrado de permutación a la letra.</p>
         <p>Se utilizaron diferentes versiones de reflectores en diferentes versiones de máquinas Enigma. Cada reflector aplicaría un cifrado de permutación diferente. Las máquinas Enigma M3 estaban equipadas con un reflector UKW-B o UKW-C. Puedes aplicar estos dos reflectores en la ventana de configuración de rotores de nuestro emulador (ver captura de pantalla anterior).</p>
